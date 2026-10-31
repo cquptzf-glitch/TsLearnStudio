@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TsLearnStudio · UI 交互原型</title>
+<style>
+:root{--bg:#f5f7fb;--panel:#fff;--panel2:#f1f5fa;--text:#15243a;--muted:#738095;--line:#e2e8f2;--blue:#3468ed;--blue2:#edf3ff;--green:#178755;--red:#c34753;--gold:#b77a27;--shadow:0 7px 24px rgba(28,52,90,.045)}
+body.dark{--bg:#0d141f;--panel:#161f2c;--panel2:#1d2a3b;--text:#eaf1fc;--muted:#9bacc3;--line:#2c394c;--blue:#82a5ff;--blue2:#1b3157;--green:#57d5a1;--red:#f78f96;--gold:#f2b866;--shadow:0 8px 26px rgba(0,0,0,.15)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.55 "Segoe UI","Microsoft Yahei",system-ui,sans-serif}button,textarea,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,textarea:focus-visible{outline:3px solid #88aaff;outline-offset:2px}.app{display:flex;min-height:100vh}.sidebar{width:228px;flex-shrink:0;background:var(--panel);border-right:1px solid var(--line);display:flex;flex-direction:column;position:sticky;top:0;height:100vh}.brand{padding:24px 18px 26px;display:flex;align-items:center;gap:11px;font-weight:800;font-size:17px;letter-spacing:-.4px}.brand-icon{display:grid;place-items:center;color:#fff;border-radius:12px;width:36px;height:36px;background:linear-gradient(145deg,#2563eb,#7c65ed);box-shadow:0 7px 20px rgba(64,100,238,.22);font-size:15px}.brand small{display:block;color:var(--muted);font-weight:500;font-size:10px;letter-spacing:1px;margin-top:-4px}.nav-title{padding:4px 20px 8px;color:var(--muted);font-size:10px;font-weight:700;letter-spacing:2px}.nav{padding:0 10px;display:grid;gap:4px}.nav button{border:0;background:transparent;color:var(--muted);height:44px;border-radius:10px;text-align:left;padding:0 13px;display:flex;align-items:center;gap:12px;font-weight:600}.nav button span.ico{width:22px;text-align:center;font-size:17px}.nav button.active{background:var(--blue2);color:var(--blue)}.nav button:hover:not(.active){background:var(--panel2);color:var(--text)}.side-bottom{margin-top:auto;border-top:1px solid var(--line);padding:16px}.mini-progress{padding:14px;background:var(--panel2);border-radius:12px}.progress-track{height:7px;background:var(--line);border-radius:10px;overflow:hidden}.progress-track i{display:block;height:100%;background:linear-gradient(90deg,#3479ec,#4ec6c1);border-radius:10px;width:27%}.main{min-width:0;flex:1}.topbar{height:65px;background:var(--panel);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 32px;gap:20px}.crumb{color:var(--muted);font-size:12px}.crumb strong{font-size:14px;color:var(--text);font-weight:650}.top-actions{display:flex;align-items:center;gap:11px}.pill{font-size:11px;border:1px solid var(--line);padding:4px 10px;border-radius:40px;color:var(--muted)}.icon-button{height:35px;width:35px;border-radius:9px;border:1px solid var(--line);background:var(--panel);color:var(--text)}.content{max-width:1500px;margin:auto;padding:30px 34px 40px}.page{display:none}.page.active{display:block}.eyebrow{font-size:11px;font-weight:800;letter-spacing:1.7px;color:var(--blue);text-transform:uppercase}.title{font-size:28px;line-height:1.3;letter-spacing:-.7px;margin:5px 0 9px}.subtitle{color:var(--muted);margin:0 0 25px;max-width:770px}.card{background:var(--panel);border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow)}.card-pad{padding:23px}.section-title{margin:28px 0 14px;display:flex;justify-content:space-between;align-items:center;font-size:17px;font-weight:800}.muted{color:var(--muted)}.tiny{font-size:12px}.primary{background:#3268eb;color:#fff;border:1px solid #3268eb;padding:10px 17px;border-radius:9px;font-weight:700}.primary:hover{background:#2158dd}.secondary{background:var(--panel);color:var(--text);border:1px solid var(--line);padding:9px 15px;border-radius:9px;font-weight:650}.secondary:hover{background:var(--panel2)}.hero{background:linear-gradient(112deg,#183d8c,#335fcb 55%,#655acb);border-radius:18px;color:white;padding:32px 36px;display:grid;grid-template-columns:1fr 240px;gap:15px;overflow:hidden}.hero h2{font-size:27px;margin:6px 0 10px;line-height:1.3}.hero p{color:#d5e4ff;max-width:580px}.hero .primary{background:#fff;color:#234dbc;border:0}.hero .graphic{margin:auto;width:190px;height:150px;border-radius:18px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.25);box-shadow:20px 18px 0 rgba(255,255,255,.075);padding:16px}.graphic em{display:block;height:9px;border-radius:6px;background:rgba(255,255,255,.55);margin:10px 0}.graphic em:nth-child(2){width:65%;background:#8bb9ff}.graphic em:nth-child(3){width:86%;background:#c7b6ff}.graphic em:nth-child(4){width:48%;background:#7de3c9}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}.stat{font-size:27px;font-weight:800;letter-spacing:-.5px}.stat-label{color:var(--muted);font-size:12px}.stage-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.stage{padding:21px;cursor:pointer;transition:transform .15s,border-color .15s}.stage:hover{transform:translateY(-2px);border-color:var(--blue)}.stage.selected{border-color:var(--blue);box-shadow:0 0 0 2px var(--blue2)}.stage .num{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:9px;background:var(--blue2);color:var(--blue);font-size:11px;font-weight:800}.stage h3{margin:12px 0 5px;font-size:16px}.stage p{margin:0 0 16px;color:var(--muted);font-size:12px}.stage footer{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}.lesson-list{display:grid;gap:8px}.lesson-row{background:var(--panel);border:1px solid var(--line);padding:14px 18px;border-radius:11px;display:flex;align-items:center;gap:16px;cursor:pointer;text-align:left;color:var(--text)}.lesson-row:hover{border-color:var(--blue)}.lesson-row code{color:var(--blue);font-size:11px}.lesson-row .row-title{font-weight:700;flex:1}.badge{font-size:10px;font-weight:750;border-radius:6px;padding:4px 8px;background:var(--blue2);color:var(--blue)}.badge.green{background:rgba(25,159,103,.1);color:var(--green)}.badge.gray{background:var(--panel2);color:var(--muted)}.work-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:17px}.step-tabs{display:flex;gap:5px;flex-wrap:wrap}.step-tabs button,.output-tabs button{background:transparent;border:0;color:var(--muted);border-radius:8px;padding:8px 13px;font-weight:650}.step-tabs button.active,.output-tabs button.active{background:var(--blue2);color:var(--blue)}.workspace{display:grid;grid-template-columns:minmax(270px,41%) minmax(360px,59%);gap:14px;align-items:stretch}.lesson-pane,.code-pane{min-height:550px;overflow:hidden}.lesson-pane{padding:25px}.lesson-pane h2{margin:10px 0 12px;font-size:23px}.lesson-pane h3{font-size:15px;margin:24px 0 8px}.lesson-pane p,.lesson-pane li{color:var(--muted);line-height:1.85}.callout{background:var(--blue2);border-radius:11px;padding:13px 15px;margin:16px 0;color:var(--text);border-left:3px solid var(--blue)}.code-sample{font-family:Consolas,"Cascadia Code",monospace;font-size:12px;line-height:1.8;padding:14px;background:#182334;color:#c7dbf5;border-radius:9px;overflow:auto;white-space:pre}.lesson-step-body{display:none}.lesson-step-body.active{display:block}.flow-steps{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:24px 0}.flow-steps span{padding:11px 13px;background:var(--blue2);border-radius:8px;color:var(--blue);font-size:12px;font-weight:750}.flow-steps b{color:var(--muted)}.panel-top{display:flex;justify-content:space-between;align-items:center;padding:10px 15px;border-bottom:1px solid var(--line);gap:10px}.code-pane{display:flex;flex-direction:column}.editor-shell{background:#151d2c;flex:1;display:flex;flex-direction:column;min-height:270px}.code-pane .panel-top{background:#1b2638;border-color:#2d3a50;color:#d6e5fc}.filename{font:12px Consolas,monospace;color:#b8d4fa}.editor-shell textarea{display:block;border:0;outline:0;resize:vertical;min-height:255px;flex:1;width:100%;background:transparent;color:#bcd8ff;padding:20px 24px;font:13px/1.8 Consolas,"Cascadia Code",monospace;tab-size:2}.toolbar{display:flex;gap:8px;padding:12px 15px;align-items:center;border-top:1px solid var(--line);flex-wrap:wrap}.toolbar .spacer{flex:1}.output{border-top:1px solid var(--line);min-height:149px}.output-tabs{display:flex;padding:5px 12px;border-bottom:1px solid var(--line)}.output-body{padding:14px 17px;color:var(--muted);white-space:pre-wrap;font-family:Consolas,monospace;font-size:12px;line-height:1.8}.task-list{display:grid;gap:12px}.task-item{padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:15px}.task-item h3{margin:0 0 4px;font-size:15px}.task-item p{margin:0;color:var(--muted);font-size:12px}.project-card{padding:22px}.project-card h3{margin:8px 0}.project-card p{color:var(--muted);font-size:12px;line-height:1.8}.milestone{padding:12px 0;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.chart-line{display:flex;align-items:center;gap:16px;margin:12px 0}.chart-line label{width:88px;color:var(--muted)}.chart-line .progress-track{flex:1}.settings-row{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:16px 2px;border-bottom:1px solid var(--line)}.settings-row p{margin:3px 0 0;color:var(--muted);font-size:12px}.notice{background:rgba(232,158,62,.09);border:1px solid rgba(232,158,62,.32);border-radius:10px;padding:10px 14px;color:var(--text);font-size:12px;margin-bottom:20px}.toast{position:fixed;bottom:24px;right:24px;background:#213452;color:white;max-width:430px;padding:13px 17px;border-radius:12px;box-shadow:0 8px 30px #0003;display:none;z-index:5}.toast.show{display:block}.footnote{color:var(--muted);font-size:11px;margin-top:27px}.hide{display:none!important}@media(max-width:1050px){.sidebar{width:66px}.brand{padding:20px 12px}.brand .name,.nav-title,.nav button .label,.side-bottom{display:none}.nav button{justify-content:center;padding:0}.hero{grid-template-columns:1fr 170px}.stage-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:800px){.content{padding:18px}.topbar{padding:0 18px}.workspace,.grid-2,.grid-3,.hero{grid-template-columns:1fr}.stage-grid{grid-template-columns:1fr}.hero .graphic{display:none}.work-head{align-items:flex-start;flex-direction:column}.lesson-pane,.code-pane{min-height:auto}}@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" aria-label="全局导航">
+  <div class="brand"><div class="brand-icon">TS</div><div class="name">TsLearnStudio<small>LEARN · BUILD · VERIFY</small></div></div>
+  <div class="nav-title">STUDIO MENU</div>
+  <nav class="nav">
+    <button data-page="home" class="active"><span class="ico">⌂</span><span class="label">学习首页</span></button>
+    <button data-page="catalog"><span class="ico">▤</span><span class="label">课程目录</span></button>
+    <button data-page="lesson"><span class="ico">⌘</span><span class="label">学习工作台</span></button>
+    <button data-page="practice"><span class="ico">☑</span><span class="label">练习与作业</span></button>
+    <button data-page="projects"><span class="ico">▣</span><span class="label">项目实战</span></button>
+    <button data-page="progress"><span class="ico">◷</span><span class="label">学习进度</span></button>
+    <button data-page="settings"><span class="ico">⚙</span><span class="label">设置与环境</span></button>
+  </nav>
+  <div class="side-bottom"><div class="mini-progress"><div class="tiny" style="font-weight:750;margin-bottom:7px">学习进度 · 示例</div><div class="progress-track"><i></i></div><div class="tiny muted" style="margin-top:6px">仅供视觉演示，非实际记录</div></div></div>
+</aside>
+<main class="main">
+<header class="topbar"><div class="crumb">TsLearnStudio / <strong id="top-title">学习首页</strong></div><div class="top-actions"><span class="pill">设计原型 v0.1 · 非运行软件</span><button class="icon-button" id="theme-button" title="切换亮暗主题" aria-label="切换亮暗主题">☾</button></div></header>
+<div class="content">
+ <div class="notice">这是交互式 UI 设计原型：页面、主题、课程导航和草稿编辑可体验；<strong>代码运行、TypeScript 编译、作业评分、SQLite 持久化尚未实现</strong>。</div>
+ <section class="page active" id="home">
+  <div class="eyebrow">PERSONAL LEARNING STUDIO</div><h1 class="title">把 AI 写的代码，真正变成自己的能力。</h1><p class="subtitle">为熟悉 C++ / Qt 的开发者设计：从浏览器原理到 TypeScript、React、Node.js，边学、边写、边验证。</p>
+  <div class="hero"><div><div class="eyebrow" style="color:#b3ccff">YOUR NEXT STEP</div><h2>学习 Promise 与 async/await</h2><p>理解异步调度和错误处理，亲手修复一段 AI 生成的 fetch 代码。</p><button class="primary" data-go="lesson">进入学习工作台 →</button></div><div class="graphic"><em></em><em></em><em></em><em></em></div></div>
+  <div class="section-title">学习概览 <span class="tiny muted">仅为设计示例</span></div><div class="grid-3"><div class="card card-pad"><div class="stat">48 <span class="tiny muted">节</span></div><div class="stat-label">规划的完整课程</div></div><div class="card card-pad"><div class="stat">6 <span class="tiny muted">阶段</span></div><div class="stat-label">从 Web 基础到全栈实战</div></div><div class="card card-pad"><div class="stat">1 <span class="tiny muted">综合项目</span></div><div class="stat-label">Mini TestPilot</div></div></div>
+  <div class="section-title">六阶段学习路径 <button class="secondary" data-go="catalog">查看全部课程</button></div><div class="stage-grid" id="home-stages"></div>
+ </section>
+ <section class="page" id="catalog">
+  <div class="eyebrow">COURSE ROADMAP</div><h1 class="title">系统课程</h1><p class="subtitle">48 课 · 六个阶段。课程卡片可点击浏览；可直接进入任何课，不强制锁定先修课程。</p>
+  <div class="stage-grid" id="catalog-stages"></div><div class="section-title"><span id="selected-stage-title">阶段课程</span><span class="tiny muted" id="selected-stage-subtitle"></span></div><div class="lesson-list" id="stage-lessons"></div>
+ </section>
+ <section class="page" id="lesson">
+  <div class="work-head"><div><div class="eyebrow">INTERACTIVE WORKBENCH</div><h1 class="title" style="font-size:24px" id="current-lesson-title">Promise 与 async/await</h1><div class="tiny muted" id="current-lesson-meta">JS-08 · JavaScript 运行机制 · 实践示例</div></div><div class="step-tabs" id="lesson-tabs"><button class="active" data-step="concept">① 概念</button><button data-step="flow">② 执行流程</button><button data-step="exercise">③ 练习</button><button data-step="summary">④ 复盘</button></div></div>
+  <div class="workspace">
+    <article class="card lesson-pane">
+      <div class="lesson-step-body active" id="step-concept"><span class="badge">核心知识</span><h2>理解异步，不只是记住语法</h2><p>JavaScript 通常在主线程执行代码。遇到异步操作时，执行控制权会交还给事件循环； Promise 的后续工作通过微任务调度。</p><div class="callout"><strong>C++ / Qt 对比</strong><div class="tiny" style="margin-top:5px">await 不等于阻塞整个线程；它更接近异步函数的暂停与恢复，和同步等待 Future 的行为不同。</div></div><h3>核心判断</h3><p>fetch 收到 HTTP 404 时，Promise 通常不会因状态码而自动 rejected，因此需要检查 response.ok。</p><pre class="code-sample">const res = await fetch("/api/users");
+if (!res.ok) throw new Error("HTTP " + res.status);</pre><button class="secondary" data-step-next="flow">查看执行流程 →</button></div>
+      <div class="lesson-step-body" id="step-flow"><span class="badge">可视化设计</span><h2>Promise 状态变化</h2><p>正式产品会支持逐帧播放、暂停、单步、回退和减少动效。当前原型展示流程结构。</p><div class="flow-steps"><span>发起 fetch</span><b>→</b><span>Pending</span><b>→</b><span>Response</span><b>→</b><span>检查 ok</span></div><div class="callout"><strong>分支 A：HTTP 404</strong><div class="tiny">fetch fulfilled（返回 Response），随后业务代码根据 status / ok 判断失败。</div></div><div class="callout"><strong>分支 B：网络失败</strong><div class="tiny">fetch rejected，可进入 catch；和 HTTP 状态码错误不一样。</div></div><button class="secondary" data-step-next="exercise">进入编码练习 →</button></div>
+      <div class="lesson-step-body" id="step-exercise"><span class="badge">编程练习</span><h2>修复网络错误处理</h2><p>右侧代码遗漏了 response.ok 检查。请修改 loadUser，让 404 和 500 不被错误当作成功。</p><h3>验收条件（目标）</h3><ul><li>正确的 200 返回 JSON。</li><li>404/500 显示合适的 HTTP 错误。</li><li>网络失败和 JSON 解析错误能传播。</li></ul><button class="secondary" id="hint-button">展开学习提示</button><div id="hint-content" class="callout hide">提示：在调用 response.json() 之前检查 response.ok，并让非成功状态抛出异常。正式应用会提供分层提示及真实单测。</div></div>
+      <div class="lesson-step-body" id="step-summary"><span class="badge">课程复盘</span><h2>这一课应该掌握</h2><p>① Promise 完成与业务成功是不同概念。<br>② await 让当前异步函数挂起，而不是锁死整个主线程。<br>③ 类型断言不是数据校验。<br>④ 应覆盖成功、HTTP 错误、网络异常与不合法 JSON。</p><div class="callout"><strong>正式应用目标</strong><div class="tiny">按课时记录已读、练习通过、测验结果与复习，而不仅是单一完成百分比。</div></div></div>
+    </article>
+    <section class="card code-pane" aria-label="编辑器与输出"><div class="panel-top"><span class="filename">src / loadUser.ts <span style="font-size:10px;color:#89a1bf">· UI 模拟编辑器</span></span><span class="tiny">TypeScript</span></div>
+      <div class="editor-shell"><textarea id="source-editor" spellcheck="false" aria-label="示例 TypeScript 代码编辑">type User = { id: number; name: string };
+
+export async function loadUser(id: number): Promise&lt;User&gt; {
+  const response = await fetch("/api/users/" + id);
+  return response.json() as Promise&lt;User&gt;;
+}</textarea></div>
+      <div class="toolbar"><button class="primary" id="run-button">▶ 运行</button><button class="secondary" id="submit-button">✓ 提交评测</button><button class="secondary" id="reset-button">↺ 重置</button><span class="spacer"></span><span class="tiny muted" id="save-state">草稿仅保存在浏览器本地</span></div>
+      <div class="output"><div class="output-tabs"><button class="active" data-output="console">控制台</button><button data-output="problems">问题</button><button data-output="tests">测试</button></div><div class="output-body" id="output-body" aria-live="polite">预览模式：已展示示例代码。点击“运行”可查看原型功能边界；真正的编译、运行与评测将在 Electron MVP 中实现。</div></div>
+    </section>
+  </div>
+ </section>
+ <section class="page" id="practice"><div class="eyebrow">PRACTICE & ASSIGNMENTS</div><h1 class="title">练习与作业</h1><p class="subtitle">为每个概念安排可检验的练习，重点训练阅读 AI 代码、预测结果、修改缺陷与回归验证。</p><div class="task-list">
+ <div class="card task-item"><div><span class="badge">JS-08 · 异步</span><h3>修复 fetch 的错误处理</h3><p>将 HTTP 错误、网络异常和正常数据区分处理。</p></div><button class="primary" data-go="lesson" data-step-target="exercise">查看练习</button></div>
+ <div class="card task-item"><div><span class="badge gray">TS-03 · 类型</span><h3>用联合类型实现任务状态机</h3><p>区别 idle、loading、success 和 error，并利用 never 检查遗漏分支。</p></div><button class="secondary" data-go="catalog">查看课程</button></div>
+ <div class="card task-item"><div><span class="badge gray">RE-04 · React</span><h3>定位 useEffect 重复请求</h3><p>识别依赖变化、清理副作用及多余重渲染。</p></div><button class="secondary" data-go="catalog">查看课程</button></div></div></section>
+ <section class="page" id="projects"><div class="eyebrow">PROJECT STUDIO</div><h1 class="title">综合项目 · Mini TestPilot</h1><p class="subtitle">在真实的 React + TypeScript + Node + SQLite 项目里实现测试用例管理，逐步完成 API、页面、测试与代码审查。</p>
+ <div class="grid-2"><div class="card project-card"><span class="badge">毕业项目规划</span><h3>测试用例管理平台</h3><p>代码工作区、文件树、API 调试和服务端运行器会在 M4 阶段实现。此处展示项目任务结构。</p><button class="primary" id="project-button">查看实施边界 →</button></div><div class="card project-card"><h3>项目里程碑</h3><div id="project-milestones"></div></div></div></section>
+ <section class="page" id="progress"><div class="eyebrow">LEARNING INSIGHTS</div><h1 class="title">学习进度与能力复盘</h1><p class="subtitle">正式软件将从本地 SQLite 读取真实学习数据。下面的图表仅用于展示视觉设计，不代表已完成的课程或真实评分。</p>
+  <div class="grid-3"><div class="card card-pad"><div class="stat">—</div><div class="stat-label">已完成课程（待接数据）</div></div><div class="card card-pad"><div class="stat">—</div><div class="stat-label">已通过作业（待接数据）</div></div><div class="card card-pad"><div class="stat">—</div><div class="stat-label">掌握度（待接数据）</div></div></div>
+  <div class="section-title">阶段进度展示样式 <span class="tiny muted">演示比例，不是真实数据</span></div><div class="card card-pad" id="progress-bars"></div>
+ </section>
+ <section class="page" id="settings"><div class="eyebrow">PREFERENCES</div><h1 class="title">设置与运行环境</h1><p class="subtitle">界面设置在原型中生效；Electron、Node 和测试运行器相关项目仅显示未来的实际检测计划。</p><div class="card card-pad">
+  <div class="settings-row"><div><strong>外观主题</strong><p>浅色或深色 UI、代码区保持暗色编辑主题</p></div><button class="secondary" id="settings-theme">切换主题</button></div>
+  <div class="settings-row"><div><strong>代码字体大小</strong><p>调整示例编辑区域的字体</p></div><div><button class="secondary" id="font-smaller" aria-label="减小字号">A−</button> <button class="secondary" id="font-larger" aria-label="增大字号">A+</button></div></div>
+  <div class="settings-row"><div><strong>Node.js 与运行器环境</strong><p>正式应用将检测 Node、包管理器、TypeScript、Vite 和运行权限</p></div><span class="badge gray">未接入</span></div>
+  <div class="settings-row"><div><strong>代码/进度持久化</strong><p>正式产品使用受控工作区 + SQLite；原型仅保存示例编辑草稿</p></div><span class="badge gray">设计中</span></div>
+ </div></section>
+ <div class="footnote">TsLearnStudio · 产品 UI / UX 原型 · v0.1 · 本页不运行或验证学员代码</div>
+</div></main></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  "use strict";
+  const stageData=[
+    {id:"WEB",title:"Web 与浏览器",desc:"从 URL、HTML 到 CSS、DOM 与 HTTP",lessons:["从 URL 到页面","HTML 文档结构","CSS 盒模型","Flex 与 Grid","DOM 与事件","Fetch 与浏览器工具","综合：静态任务板"]},
+    {id:"JS",title:"JavaScript 核心",desc:"函数、闭包、Promise 与 Event Loop",lessons:["变量与值类型","对象与数组","函数与箭头函数","作用域与闭包","原型与 Class","模块与依赖","Promise","Event Loop 与 async","错误与网络异常"]},
+    {id:"TS",title:"TypeScript 类型",desc:"泛型、联合类型、类型收窄与严格检查",lessons:["TS 编译与配置","interface 和 type","联合类型与收窄","泛型","工具类型","null、unknown、any","异步 TS 和模块","综合：AI 代码审查"]},
+    {id:"RE",title:"React 工程",desc:"组件、状态、Effect、表单及预览",lessons:["React/TSX 与组件","事件与 State","列表与条件渲染","Effect 和生命周期","表单与受控输入","组件设计与状态提升","API 请求与加载状态","UI 工程与调试","综合：测试用例看板"]},
+    {id:"BE",title:"Node.js 后端",desc:"HTTP 路由、数据库、异常与测试",lessons:["Node 事件循环与进程","HTTP 路由与 REST","中间件与参数校验","异步错误与日志","SQLite 基础","后端测试","综合：用例 API"]},
+    {id:"FS",title:"全栈与 AI 协作",desc:"联调、回归、修复 AI 代码、毕业项目",lessons:["前后端联调","完整数据流与状态","调试工具链","单测与回归","安全基础","AI 需求拆解与改代码","AI 代码审查","毕业项目：Mini TestPilot"]}
+  ];
+  const initialSource=document.getElementById("source-editor").value;
+  const editor=document.getElementById("source-editor");
+  const lessonTitle=document.getElementById("current-lesson-title");
+  const lessonMeta=document.getElementById("current-lesson-meta");
+  const toast=document.getElementById("toast");
+  let selectedStage=1, activeOutput="console", fontSize=13, toastTimer;
+  function announce(t){toast.textContent=t;toast.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(function(){toast.classList.remove("show")},3800)}
+  function page(name){
+    document.querySelectorAll(".page").forEach(function(x){x.classList.toggle("active",x.id===name)});
+    document.querySelectorAll(".nav button").forEach(function(x){x.classList.toggle("active",x.dataset.page===name)});
+    let b=document.querySelector('.nav button[data-page="'+name+'"]');document.getElementById("top-title").textContent=b?b.textContent.trim():"学习";
+    window.scrollTo({top:0,behavior:"instant"});
+  }
+  function renderStages(){
+    ["home-stages","catalog-stages"].forEach(function(parentId){
+      let el=document.getElementById(parentId);el.innerHTML="";
+      stageData.forEach(function(s,i){
+        const card=document.createElement("button");card.type="button";card.className="card stage"+(parentId==="catalog-stages"&&selectedStage===i?" selected":"");
+        card.style.textAlign="left";card.style.color="var(--text)";card.style.background="var(--panel)";
+        card.innerHTML='<span class="num">'+String(i+1).padStart(2,"0")+'</span><h3>'+s.title+'</h3><p>'+s.desc+'</p><footer><span>'+s.lessons.length+' 节课</span><span>查看课程 →</span></footer>';
+        card.addEventListener("click",function(){selectedStage=i;page("catalog");renderStages();renderLessons()});el.appendChild(card);
+      })
+    });
+  }
+  function renderLessons(){
+    const s=stageData[selectedStage];document.getElementById("selected-stage-title").textContent=s.title;
+    document.getElementById("selected-stage-subtitle").textContent=s.lessons.length+" 节课 · 可自主选择";
+    const list=document.getElementById("stage-lessons");list.innerHTML="";
+    s.lessons.forEach(function(name,i){let btn=document.createElement("button");btn.className="lesson-row";btn.innerHTML='<code>'+s.id+'-'+String(i+1).padStart(2,"0")+'</code><span class="row-title">'+name+'</span><span class="badge gray">课程规划</span><span>→</span>';btn.addEventListener("click",function(){lessonTitle.textContent=name;lessonMeta.textContent=s.id+'-'+String(i+1).padStart(2,"0")+' · '+s.title+' · 工作台结构示例';page("lesson");announce("已切换课程标题。右侧练习代码仍为共用的 async/await 原型样例，并非该课的完整内容。")});list.appendChild(btn)})
+  }
+  function step(name){document.querySelectorAll(".lesson-step-body").forEach(function(x){x.classList.toggle("active",x.id==="step-"+name)});document.querySelectorAll("#lesson-tabs button").forEach(function(x){x.classList.toggle("active",x.dataset.step===name)})}
+  function output(name,text){activeOutput=name;document.querySelectorAll(".output-tabs button").forEach(function(x){x.classList.toggle("active",x.dataset.output===name)});document.getElementById("output-body").textContent=text}
+  const outputMessages={
+    console:"原型说明：不会执行 textarea 中的代码。未来 Electron 版本将在隔离运行器中显示标准输出、异常和耗时。",
+    problems:"原型说明：未集成 TypeScript Compiler API 或 Monaco。未来会显示文件、行号、TS 诊断代码与解决提示。",
+    tests:"原型说明：未集成 Vitest/Grader，不存在真实测试结果。未来展示公开测试、失败断言、提交尝试与评测版本。"
+  };
+  function theme(){document.body.classList.toggle("dark");const val=document.body.classList.contains("dark")?"dark":"light";try{localStorage.setItem("tsls-theme",val)}catch(e){}document.getElementById("theme-button").textContent=val==="dark"?"☀":"☾"}
+  document.querySelectorAll("[data-page]").forEach(function(b){b.addEventListener("click",function(){page(b.dataset.page)})});
+  document.querySelectorAll("[data-go]").forEach(function(b){b.addEventListener("click",function(){page(b.dataset.go);if(b.dataset.stepTarget)step(b.dataset.stepTarget)})});
+  document.querySelectorAll("[data-step-next]").forEach(function(b){b.addEventListener("click",function(){step(b.dataset.stepNext)})});
+  document.querySelectorAll("#lesson-tabs button").forEach(function(b){b.addEventListener("click",function(){step(b.dataset.step)})});
+  document.querySelectorAll(".output-tabs button").forEach(function(b){b.addEventListener("click",function(){output(b.dataset.output,outputMessages[b.dataset.output])})});
+  document.getElementById("run-button").addEventListener("click",function(){output("console","[仅 UI 原型]\n尚未接入 TypeScript 编译器和 Node 执行器；代码未运行。\n参见 docs/02-technical-architecture.md 和 M2 实施计划。")});
+  document.getElementById("submit-button").addEventListener("click",function(){output("tests","[仅 UI 原型]\n尚未创建测试进程或写入提交记录；不能给出通过/失败评分。\n正式版将验证类型检查、公开与隐藏断言并持久化结果。")});
+  document.getElementById("reset-button").addEventListener("click",function(){if(confirm("将当前原型编辑器恢复为初始示例代码？")){editor.value=initialSource;try{localStorage.removeItem("tsls-source")}catch(e){}document.getElementById("save-state").textContent="已恢复初始示例";announce("示例代码已重置") }});
+  document.getElementById("hint-button").addEventListener("click",function(){document.getElementById("hint-content").classList.toggle("hide")});
+  editor.addEventListener("input",function(){try{localStorage.setItem("tsls-source",editor.value);document.getElementById("save-state").textContent="原型草稿已保存到此浏览器"}catch(e){document.getElementById("save-state").textContent="无法保存原型草稿"}});
+  document.getElementById("project-button").addEventListener("click",function(){announce("项目模式尚处于设计阶段；完整文件树、Node/API、React 预览将在 M4 实现。")});
+  document.getElementById("theme-button").addEventListener("click",theme);
+  document.getElementById("settings-theme").addEventListener("click",theme);
+  document.getElementById("font-smaller").addEventListener("click",function(){fontSize=Math.max(11,fontSize-1);editor.style.fontSize=fontSize+"px"});
+  document.getElementById("font-larger").addEventListener("click",function(){fontSize=Math.min(22,fontSize+1);editor.style.fontSize=fontSize+"px"});
+  try{if(localStorage.getItem("tsls-theme")==="dark")document.body.classList.add("dark");let saved=localStorage.getItem("tsls-source");if(saved!==null)editor.value=saved}catch(e){}
+  document.getElementById("theme-button").textContent=document.body.classList.contains("dark")?"☀":"☾";
+  const milestones=["M1 · 类型与数据模型","M2 · Node REST API","M3 · React 列表","M4 · 表单与状态","M5 · 自动化测试","M6 · 缺陷修复与代码审查"];
+  document.getElementById("project-milestones").innerHTML=milestones.map(function(t){return '<div class="milestone"><span>'+t+'</span><span class="badge gray">规划中</span></div>'}).join("");
+  document.getElementById("progress-bars").innerHTML=stageData.map(function(s,i){let p=[54,28,0,0,0,0][i];return '<div class="chart-line"><label>'+s.title+'</label><div class="progress-track"><i style="width:'+p+'%"></i></div><span class="tiny muted" style="width:32px;text-align:right">'+p+'%</span></div>'}).join("");
+  renderStages();renderLessons();
+})();
+</script>
+</body></html>
