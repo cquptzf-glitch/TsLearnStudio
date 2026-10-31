@@ -161,3 +161,27 @@ Done：用户能关闭 AI，课程与评测功能无降级；网络断开有明�
 - 已建立：产品文档、架构设计、UI/课程设计和实施计划（以 GitHub 实际文件为准）。
 - 未实现：正式 Electron 应用、JS/TS 运行器、自动评分、SQLite、课程内容、React/Node 全栈项目。
 - 下一开发动作：DEV-001 到 DEV-005，随后 DEV-006–014；先确保 M2 纵向闭环而非堆积空页面。
+
+
+## 9. 教学内核与首批题目开发任务补充（v0.2）
+
+需求深化参考 [06](06-learning-objectives-and-difficulty.md)、[07](07-exercise-design-and-grading.md)、[08](08-capstone-project-design.md)、[09](09-interactive-learning-engine.md)。
+
+| 新任务 | 优先级 | 开发对象 | 具体验收 |
+| --- | --- | --- | --- |
+| EDU-001 | P0 | 课程目标与评测 Schema | 标准化 Lesson/Exercise/Outcome/TestCase ID；格式错误拒绝加载 |
+| EDU-002 | P0 | JS-09 真实教材接入 | 概念/动画脚本/预测题/练习/复盘能在同一课运行 |
+| EDU-003 | P0 | Predict/Trace 题型 | 先预测后运行；记录首答，不泄露预期输出 |
+| EDU-004 | P0 | EX-REPAIR 编码题 | 编辑范围、草稿、reset、真实 typecheck、公开测试、完整提交 |
+| EDU-005 | P0 | 测试报告与提示引擎 | 失败输入/期望/实际/源位置/提示层级可见，设施错误独立分类 |
+| EDU-006 | P0 | 目标→测评映射检查 | 每个关键 Outcome 至少一个必选测试，否则课包不能发布 |
+| EDU-007 | P1 | Event Loop 可单步模型 | 栈/微任务/计时器队列与输出对应；标明浏览器宿主 |
+| EDU-008 | P1 | Type Inspector 与状态机题 | unknown 与类型收窄/never 实验，含负向编译测试 |
+| EDU-009 | P1 | React Effect/竞态实验 | 确定性 mock 乱序、卸载和 StrictMode 相关检查 |
+| EDU-010 | P1 | Mini TestPilot M1/M2 | TS 纯函数+内存 Node API、项目工作区、真实 HTTP 集成测试 |
+| EDU-011 | P1 | Mini TestPilot M3–M5 | SQLite/React/表单/执行记录完整功能和回归 |
+| EDU-012 | P1 | Mini TestPilot M6–M8 | 修 bug、AI 变更审查、版本迁移、毕业说明和验收 |
+| EDU-013 | P1 | 课程内容流水线 | 对所有交付课程执行 Schema、内容、正反解、离线资源与 UI 检查 |
+| EDU-014 | P2 | 预制变式练习与复习 | 重练不同业务实例，区分已读/通过/解释/复习证据 |
+
+**首批开发排序**：EDU-001/002/003/004/005/006 → JS-09 完整闭环通过 → JS-08/TS-06/RE-04 精品课程 → Mini TestPilot M1/M2 → 扩展课程和项目。代码执行安全仍遵守原有 DEV-010/011 和架构设计，学员代码不得在 Electron Main 进程执行。

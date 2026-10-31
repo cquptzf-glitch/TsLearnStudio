@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 2,
+  "lessonId": "JS-09",
+  "exerciseId": "PR-07",
+  "revision": 1,
+  "kind": "repair",
+  "difficulty": "core",
+  "title": "修复 fetch HTTP 与运行时数据处理",
+  "learningOutcomes": [
+    "Promise settlement != HTTP success",
+    "Runtime validation for unknown JSON",
+    "Distinguish HTTP and network errors"
+  ],
+  "starterFile": "starter/loadUser.ts",
+  "referenceFile": "reference/loadUser.ts",
+  "editableFiles": [
+    "starter/loadUser.ts"
+  ],
+  "publicTests": [
+    "C01",
+    "C02",
+    "C03"
+  ],
+  "requiredTestIds": [
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06"
+  ],
+  "optionalTestIds": [
+    "C07"
+  ],
+  "cases": [
+    {
+      "id": "C01",
+      "description": "200 valid User",
+      "kind": "success",
+      "required": true,
+      "public": true
+    },
+    {
+      "id": "C02",
+      "description": "404 must throw HttpError(status=404)",
+      "kind": "http-error",
+      "required": true,
+      "public": true
+    },
+    {
+      "id": "C03",
+      "description": "500 must throw HttpError(status=500)",
+      "kind": "http-error",
+      "required": true,
+      "public": true
+    },
+    {
+      "id": "C04",
+      "description": "network rejection propagates",
+      "kind": "network-error",
+      "required": true,
+      "public": false
+    },
+    {
+      "id": "C05",
+      "description": "invalid JSON rejects",
+      "kind": "parse-error",
+      "required": true,
+      "public": false
+    },
+    {
+      "id": "C06",
+      "description": "invalid User shape throws DataValidationError",
+      "kind": "validation-error",
+      "required": true,
+      "public": false
+    },
+    {
+      "id": "C07",
+      "description": "invalid id rejected before fetching",
+      "kind": "validation-error",
+      "required": false,
+      "public": false
+    }
+  ],
+  "hints": [
+    {
+      "id": "concept",
+      "text": "HTTP 404 is a Response, not necessarily a rejected Promise."
+    },
+    {
+      "id": "location",
+      "text": "Check response.ok before parsing JSON."
+    },
+    {
+      "id": "strategy",
+      "text": "Parse to unknown and validate id/name at runtime."
+    }
+  ],
+  "runner": "future-vitest-runner",
+  "status": "design-sample"
+}

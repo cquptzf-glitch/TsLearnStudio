@@ -17,6 +17,11 @@
 | [UI/UX 设计](docs/03-ui-ux-design.md) | 信息架构、页面布局、交互状态、设计 Token、无障碍 |
 | [课程与评测](docs/04-curriculum-and-assessment.md) | 48 课目录、练习设计、评测/掌握度、样例数据 |
 | [实施计划](docs/05-implementation-plan.md) | 里程碑、任务拆解、质量门禁、风险与决策记录 |
+| [逐课能力与难点地图](docs/06-learning-objectives-and-difficulty.md) | 48 课的关键机制、易错点、实验与最低验收 |
+| [作业题库与评测](docs/07-exercise-design-and-grading.md) | 六种题型、首批 16 项重点任务、详细测试与反馈规则 |
+| [Mini TestPilot 实战规格](docs/08-capstone-project-design.md) | 领域模型、API 合约、8 个里程碑、联调与回归设计 |
+| [交互课程引擎](docs/09-interactive-learning-engine.md) | 教学视图、课时 Schema、运行/测试/复盘数据流 |
+| [精品示范课 JS-09](curriculum/samples/JS-09/lesson.md) | Fetch 异常处理的完整教材样稿与示例代码 |
 
 ## UI 原型
 
@@ -47,3 +52,11 @@
 - [TypeScript 官方手册](https://www.typescriptlang.org/docs/handbook/intro.html)
 - [React 学习文档](https://react.dev/learn)
 - [Node.js 学习文档](https://nodejs.org/en/learn)
+
+## 本轮课程与实战深化（设计更新）
+
+- 课程重点从“语法介绍”转向 **关键机制 → 可观察行为 → 反例 → 实际修复 → 回归验证**。
+- 学习结果分为 L1 识别、L2 推理、L3 实现、L4 迁移；关键知识点必须有真实的评测证据。
+- 每课至少一项预测/理解题和一项动手编程；关键课程增加缺陷修复与异常边界，综合课程是多文件任务。
+- 毕业项目按 M1–M8 分阶段实现，并指定需要修改的文件、API、数据模型和自动验收。
+- 新增 [JS-09 课程样稿](curriculum/samples/JS-09/README.md)，包括课程正文、课程题目元数据、学员起始源码及参考解法。**尚未接入运行器/评测系统**。
