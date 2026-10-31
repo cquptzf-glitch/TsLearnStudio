@@ -1,0 +1,541 @@
+{
+  "schemaVersion": 1,
+  "catalogId": "tsls-mini-projects",
+  "revision": 1,
+  "status": "design",
+  "notice": "Design metadata only. No project starter runtime, grader, or Electron app integration has been implemented.",
+  "projects": [
+    {
+      "id": "MINI-01",
+      "title": "Study Planner · 学习计划板",
+      "stageId": "WEB",
+      "kind": "browser-dom",
+      "estimatedHours": {
+        "min": 3,
+        "max": 4
+      },
+      "optional": false,
+      "prerequisiteLessons": [
+        "WEB-02",
+        "WEB-03",
+        "WEB-04",
+        "WEB-05",
+        "WEB-07",
+        "JS-02"
+      ],
+      "skills": [
+        "semantic-html",
+        "responsive-css",
+        "dom-event-delegation",
+        "state-immutability",
+        "local-storage",
+        "safe-dom"
+      ],
+      "runnerId": "browser-dom-lab",
+      "status": "design",
+      "descriptionPath": "docs/projects/MINI-01-study-planner.md",
+      "milestones": [
+        {
+          "id": "P01-M1",
+          "title": "页面与表单布局"
+        },
+        {
+          "id": "P01-M2",
+          "title": "任务数据与 DOM 交互"
+        },
+        {
+          "id": "P01-M3",
+          "title": "持久化与损坏数据恢复"
+        },
+        {
+          "id": "P01-M4",
+          "title": "安全与事件缺陷修复"
+        }
+      ],
+      "acceptanceTests": [
+        {
+          "id": "P01-T01",
+          "required": true
+        },
+        {
+          "id": "P01-T02",
+          "required": true
+        },
+        {
+          "id": "P01-T03",
+          "required": true
+        },
+        {
+          "id": "P01-T04",
+          "required": true
+        },
+        {
+          "id": "P01-T05",
+          "required": true
+        },
+        {
+          "id": "P01-T06",
+          "required": true
+        },
+        {
+          "id": "P01-T07",
+          "required": true
+        },
+        {
+          "id": "P01-T08",
+          "required": true
+        },
+        {
+          "id": "P01-T09",
+          "required": false
+        }
+      ],
+      "graduationProject": "Mini TestPilot"
+    },
+    {
+      "id": "MINI-02",
+      "title": "Request Lab · 异步请求故障实验台",
+      "stageId": "JS",
+      "kind": "browser-ts",
+      "estimatedHours": {
+        "min": 4,
+        "max": 6
+      },
+      "optional": false,
+      "prerequisiteLessons": [
+        "WEB-06",
+        "JS-07",
+        "JS-08",
+        "JS-09",
+        "TS-06"
+      ],
+      "skills": [
+        "promise",
+        "http-status",
+        "error-classification",
+        "runtime-validation",
+        "abort",
+        "race-control"
+      ],
+      "runnerId": "browser-ts-lab",
+      "status": "design",
+      "descriptionPath": "docs/projects/MINI-02-request-lab.md",
+      "milestones": [
+        {
+          "id": "P02-M1",
+          "title": "错误类型与预测"
+        },
+        {
+          "id": "P02-M2",
+          "title": "fetch 与数据校验"
+        },
+        {
+          "id": "P02-M3",
+          "title": "模拟请求与状态可视化"
+        },
+        {
+          "id": "P02-M4",
+          "title": "乱序/取消修复"
+        }
+      ],
+      "acceptanceTests": [
+        {
+          "id": "P02-T01",
+          "required": true
+        },
+        {
+          "id": "P02-T02",
+          "required": true
+        },
+        {
+          "id": "P02-T03",
+          "required": true
+        },
+        {
+          "id": "P02-T04",
+          "required": true
+        },
+        {
+          "id": "P02-T05",
+          "required": true
+        },
+        {
+          "id": "P02-T06",
+          "required": true
+        },
+        {
+          "id": "P02-T07",
+          "required": true
+        },
+        {
+          "id": "P02-T08",
+          "required": true
+        }
+      ],
+      "graduationProject": "Mini TestPilot"
+    },
+    {
+      "id": "MINI-03",
+      "title": "Typed Task Engine · 类型安全任务引擎",
+      "stageId": "TS",
+      "kind": "ts-library",
+      "estimatedHours": {
+        "min": 4,
+        "max": 6
+      },
+      "optional": false,
+      "prerequisiteLessons": [
+        "TS-02",
+        "TS-03",
+        "TS-04",
+        "TS-05",
+        "TS-06",
+        "TS-08"
+      ],
+      "skills": [
+        "discriminated-union",
+        "generics",
+        "never",
+        "typed-result",
+        "immutable-state",
+        "type-tests"
+      ],
+      "runnerId": "typecheck-vitest-lab",
+      "status": "design",
+      "descriptionPath": "docs/projects/MINI-03-typed-task-engine.md",
+      "milestones": [
+        {
+          "id": "P03-M1",
+          "title": "任务类型与泛型"
+        },
+        {
+          "id": "P03-M2",
+          "title": "状态转移 reducer"
+        },
+        {
+          "id": "P03-M3",
+          "title": "筛选与历史日志"
+        },
+        {
+          "id": "P03-M4",
+          "title": "代码审查和负向类型测试"
+        }
+      ],
+      "acceptanceTests": [
+        {
+          "id": "P03-T01",
+          "required": true
+        },
+        {
+          "id": "P03-T02",
+          "required": true
+        },
+        {
+          "id": "P03-T03",
+          "required": true
+        },
+        {
+          "id": "P03-T04",
+          "required": true
+        },
+        {
+          "id": "P03-T05",
+          "required": true
+        },
+        {
+          "id": "P03-T06",
+          "required": true
+        },
+        {
+          "id": "P03-T07",
+          "required": true
+        },
+        {
+          "id": "P03-T08",
+          "required": true
+        }
+      ],
+      "graduationProject": "Mini TestPilot"
+    },
+    {
+      "id": "MINI-04",
+      "title": "React Bug Board · 缺陷看板",
+      "stageId": "RE",
+      "kind": "react-ui",
+      "estimatedHours": {
+        "min": 6,
+        "max": 9
+      },
+      "optional": false,
+      "prerequisiteLessons": [
+        "RE-01",
+        "RE-02",
+        "RE-03",
+        "RE-04",
+        "RE-05",
+        "RE-06",
+        "RE-07",
+        "RE-08",
+        "RE-09"
+      ],
+      "skills": [
+        "react-components",
+        "state-snapshot",
+        "forms",
+        "effects",
+        "list-keys",
+        "stale-requests",
+        "component-tests"
+      ],
+      "runnerId": "react-vite-lab",
+      "status": "design",
+      "descriptionPath": "docs/projects/MINI-04-react-bug-board.md",
+      "milestones": [
+        {
+          "id": "P04-M1",
+          "title": "基础模型与列表"
+        },
+        {
+          "id": "P04-M2",
+          "title": "组合筛选与空态"
+        },
+        {
+          "id": "P04-M3",
+          "title": "表单编辑"
+        },
+        {
+          "id": "P04-M4",
+          "title": "异步请求竞态"
+        },
+        {
+          "id": "P04-M5",
+          "title": "AI 风格缺陷与组件测试"
+        }
+      ],
+      "acceptanceTests": [
+        {
+          "id": "P04-T01",
+          "required": true
+        },
+        {
+          "id": "P04-T02",
+          "required": true
+        },
+        {
+          "id": "P04-T03",
+          "required": true
+        },
+        {
+          "id": "P04-T04",
+          "required": true
+        },
+        {
+          "id": "P04-T05",
+          "required": true
+        },
+        {
+          "id": "P04-T06",
+          "required": true
+        },
+        {
+          "id": "P04-T07",
+          "required": true
+        },
+        {
+          "id": "P04-T08",
+          "required": true
+        },
+        {
+          "id": "P04-T09",
+          "required": true
+        }
+      ],
+      "graduationProject": "Mini TestPilot"
+    },
+    {
+      "id": "MINI-05",
+      "title": "Notes API · 本地知识库后端",
+      "stageId": "BE",
+      "kind": "node-api",
+      "estimatedHours": {
+        "min": 6,
+        "max": 9
+      },
+      "optional": false,
+      "prerequisiteLessons": [
+        "BE-01",
+        "BE-02",
+        "BE-03",
+        "BE-04",
+        "BE-05",
+        "BE-06",
+        "BE-07"
+      ],
+      "skills": [
+        "rest",
+        "runtime-validation",
+        "errors",
+        "sqlite",
+        "transactions",
+        "optimistic-concurrency",
+        "integration-tests"
+      ],
+      "runnerId": "node-api-lab",
+      "status": "design",
+      "descriptionPath": "docs/projects/MINI-05-notes-api.md",
+      "milestones": [
+        {
+          "id": "P05-M1",
+          "title": "内存 REST API"
+        },
+        {
+          "id": "P05-M2",
+          "title": "入参与错误规范"
+        },
+        {
+          "id": "P05-M3",
+          "title": "SQLite 持久化"
+        },
+        {
+          "id": "P05-M4",
+          "title": "版本冲突与事务"
+        },
+        {
+          "id": "P05-M5",
+          "title": "故障与集成测试"
+        }
+      ],
+      "acceptanceTests": [
+        {
+          "id": "P05-T01",
+          "required": true
+        },
+        {
+          "id": "P05-T02",
+          "required": true
+        },
+        {
+          "id": "P05-T03",
+          "required": true
+        },
+        {
+          "id": "P05-T04",
+          "required": true
+        },
+        {
+          "id": "P05-T05",
+          "required": true
+        },
+        {
+          "id": "P05-T06",
+          "required": true
+        },
+        {
+          "id": "P05-T07",
+          "required": true
+        },
+        {
+          "id": "P05-T08",
+          "required": true
+        },
+        {
+          "id": "P05-T09",
+          "required": true
+        },
+        {
+          "id": "P05-T10",
+          "required": true
+        }
+      ],
+      "graduationProject": "Mini TestPilot"
+    },
+    {
+      "id": "MINI-06",
+      "title": "Snippet Vault · Electron 代码片段库",
+      "stageId": "FS",
+      "kind": "electron-app",
+      "estimatedHours": {
+        "min": 6,
+        "max": 10
+      },
+      "optional": true,
+      "prerequisiteLessons": [
+        "FS-04",
+        "FS-05",
+        "FS-08"
+      ],
+      "skills": [
+        "electron-main",
+        "preload",
+        "ipc",
+        "context-isolation",
+        "filesystem",
+        "desktop-app"
+      ],
+      "runnerId": "electron-project-lab",
+      "status": "design",
+      "descriptionPath": "docs/projects/MINI-06-electron-snippet-vault.md",
+      "milestones": [
+        {
+          "id": "P06-M1",
+          "title": "窗口与 React UI"
+        },
+        {
+          "id": "P06-M2",
+          "title": "片段 CRUD"
+        },
+        {
+          "id": "P06-M3",
+          "title": "持久化服务"
+        },
+        {
+          "id": "P06-M4",
+          "title": "Preload API 安全"
+        },
+        {
+          "id": "P06-M5",
+          "title": "权限故障修复"
+        }
+      ],
+      "acceptanceTests": [
+        {
+          "id": "P06-T01",
+          "required": true
+        },
+        {
+          "id": "P06-T02",
+          "required": true
+        },
+        {
+          "id": "P06-T03",
+          "required": true
+        },
+        {
+          "id": "P06-T04",
+          "required": true
+        },
+        {
+          "id": "P06-T05",
+          "required": true
+        },
+        {
+          "id": "P06-T06",
+          "required": true
+        },
+        {
+          "id": "P06-T07",
+          "required": true
+        },
+        {
+          "id": "P06-T08",
+          "required": true
+        },
+        {
+          "id": "P06-T09",
+          "required": true
+        }
+      ],
+      "graduationProject": "Mini TestPilot"
+    }
+  ]
+}
