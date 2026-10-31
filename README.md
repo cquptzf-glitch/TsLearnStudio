@@ -20,9 +20,9 @@
 
 ## UI 原型
 
-打开 [prototype/index.html](prototype/index.html) 即可在浏览器预览学习工作台、多页面导航、亮暗色主题和代码练习的界面流程。
+下载/克隆仓库后打开 [prototype/index.html](prototype/index.html)，即可在浏览器预览 v0.2 专业紧凑型工作台、课程列表、项目页面、亮暗主题和代码草稿编辑。请保留同目录的 `styles.css` 与 `app.js`。
 
-**注意：UI 原型不是真正的 Electron 程序**；它不会执行或评测学员代码，所有示例状态均为设计样例。
+**注意：UI 原型不是真正的 Electron 程序**；已支持课程导航、模块搜索、示例编辑草稿、主题/布局切换，但不会编译、执行或评测学员代码。具体说明见 [prototype/README.md](prototype/README.md)。
 
 ## 拟定技术栈
 
