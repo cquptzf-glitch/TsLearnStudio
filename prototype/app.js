@@ -188,3 +188,37 @@ document.addEventListener("keydown",e=>{
 try{if(localStorage.getItem(themeKey)==="dark")document.body.setAttribute("data-theme","dark")}catch(e){}
 stageStrip();moduleList();courseTable();taskTable();otherContent();
 })();
+
+/* v0.3 project gallery: offline static planning preview, not a runnable IDE. */
+(() => {
+ "use strict";
+ const projects = [
+  {id:"MINI-01",title:"Study Planner",cn:"原生 Web 学习计划板",stack:"HTML / CSS / JS",hours:"3–4h",stage:"Web",tests:9,desc:"DOM 事件委托、布局、存储、XSS",doc:"MINI-01-study-planner.md",steps:["表单与布局","DOM 任务操作","数据持久化","修复事件/安全缺陷"]},
+  {id:"MINI-02",title:"Request Lab",cn:"请求故障实验台",stack:"TypeScript / Fetch",hours:"4–6h",stage:"JavaScript",tests:8,desc:"Promise、404/500、网络异常、取消与乱序",doc:"MINI-02-request-lab.md",steps:["错误类型预测","实现 Fetch 和校验","模拟请求与日志","竞态与取消回归"]},
+  {id:"MINI-03",title:"Typed Task Engine",cn:"类型安全任务引擎",stack:"TypeScript / Vitest",hours:"4–6h",stage:"TypeScript",tests:8,desc:"泛型、状态联合、never 穷尽检查",doc:"MINI-03-typed-task-engine.md",steps:["状态模型/泛型","Reducer 迁移","筛选与日志","负向类型与审查"]},
+  {id:"MINI-04",title:"React Bug Board",cn:"React 缺陷看板",stack:"React / Vite / TS",hours:"6–9h",stage:"React",tests:9,desc:"组件、表单、State、Effect 与请求竞态",doc:"MINI-04-react-bug-board.md",steps:["类型与列表","组合筛选","受控表单","请求竞态","组件测试"]},
+  {id:"MINI-05",title:"Notes API",cn:"Node 本地知识库 API",stack:"Node / TS / SQLite",hours:"6–9h",stage:"Node.js",tests:10,desc:"REST、入参校验、事务、迁移、集成测试",doc:"MINI-05-notes-api.md",steps:["内存 REST","运行时校验","SQLite 持久化","并发/事务","HTTP 测试"]},
+  {id:"MINI-06",title:"Snippet Vault",cn:"Electron 代码片段库（选修）",stack:"Electron / React / TS",hours:"6–10h",stage:"桌面开发",tests:9,desc:"Main/Preload/Renderer、IPC 与权限隔离",doc:"MINI-06-electron-snippet-vault.md",steps:["窗口与 UI","片段管理","本地持久化","受控 IPC","安全测试"]}
+ ];
+ const root=document.getElementById("mini-project-grid"),detail=document.getElementById("mini-project-detail");
+ if(!root||!detail)return;
+ function select(index){
+  const p=projects[index];
+  root.querySelectorAll("button").forEach((b,i)=>{b.classList.toggle("selected",i===index);b.setAttribute("aria-pressed",i===index?"true":"false")});
+  detail.replaceChildren();
+  const head=document.createElement("div");head.className="detail-head";
+  const info=document.createElement("div");
+  const kicker=document.createElement("div");kicker.className="eyebrow";kicker.textContent=p.id+" · "+p.stage+" · 设计规格";
+  const title=document.createElement("h3");title.textContent=p.cn+" / "+p.title;
+  const desc=document.createElement("p");desc.textContent="重点训练："+p.desc+"；建议 "+p.hours+"，分阶段独立开发。";
+  info.append(kicker,title,desc);
+  const link=document.createElement("a");link.href="../docs/projects/"+p.doc;link.className="btn sm";link.textContent="查看任务规格 ↗";link.title="打开仓库本地 Markdown 任务文档";
+  head.append(info,link);
+  const milestoneGrid=document.createElement("div");milestoneGrid.className="detail-milestones";
+  p.steps.forEach((step,i)=>{const box=document.createElement("div");box.className="mini-milestone";const n=document.createElement("strong");n.textContent="M"+(i+1)+" · "+step;const s=document.createElement("small");s.textContent="设计中 · 暂不可运行";box.append(n,s);milestoneGrid.appendChild(box)});
+  const footer=document.createElement("div");footer.className="small muted";footer.style.marginTop="10px";footer.textContent=p.tests+" 项测试检查点 · 项目工作区/运行器尚未接入，不能在本原型内提交。";
+  detail.append(head,milestoneGrid,footer);
+ }
+ projects.forEach((p,index)=>{const card=document.createElement("button");card.type="button";card.className="mini-project-card";card.innerHTML='<div class="flex" style="justify-content:space-between;gap:6px"><span class="lesson-id">'+p.id+'</span><span class="tag amber">设计中</span></div><strong>'+p.cn+'</strong><div class="summary">'+p.desc+'</div><footer><span>'+p.stack+'</span><span>'+p.hours+'</span></footer>';card.addEventListener("click",()=>select(index));root.appendChild(card)});
+ select(0);
+})();

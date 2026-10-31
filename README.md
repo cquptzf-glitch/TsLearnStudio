@@ -60,3 +60,9 @@
 - 每课至少一项预测/理解题和一项动手编程；关键课程增加缺陷修复与异常边界，综合课程是多文件任务。
 - 毕业项目按 M1–M8 分阶段实现，并指定需要修改的文件、API、数据模型和自动验收。
 - 新增 [JS-09 课程样稿](curriculum/samples/JS-09/README.md)，包括课程正文、课程题目元数据、学员起始源码及参考解法。**尚未接入运行器/评测系统**。
+
+## 阶梯式小项目（v0.3）
+
+除 48 课内的练习与毕业项目 Mini TestPilot 外，新增六个独立实战项目：Study Planner、Request Lab、Typed Task Engine、React Bug Board、Notes API、Snippet Vault（Electron 选修）。详见 [六个小项目学习路线](docs/10-mini-project-learning-path.md)、[逐项目详细规格](docs/projects/) 和 [机器可读项目目录](curriculum/projects/catalog.json)。
+
+目前是**项目设计与验收规格**，尚未提供可运行模板、运行器与评测，不应标示为已交付项目。

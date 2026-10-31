@@ -349,3 +349,8 @@ mini-testpilot/
 3. 首个可运行的 Mini TestPilot 只实现 M1–M2（纯函数+内存 API），确保多文件、Node 流程和测试可信。
 4. 通过安全/功能验证后再引入 SQLite、Vite 预览和综合 M3–M8。
 5. 所有教学体验必须真实运行；未完成的功能只展示说明，不显示虚假的通过状态。
+
+
+## 13. 与独立小项目的衔接（v0.3）
+
+Mini TestPilot 仍然是最终综合项目；之前的六个小项目用于分别突破 DOM、Promise/HTTP、TypeScript 泛型和状态机、React 组件与异步、Node/SQLite，以及可选 Electron 安全 IPC。每个小项目的成果要在迁移到 Mini TestPilot 前重新核对 API、数据合同与测试。详见 [六个独立项目](10-mini-project-learning-path.md)，不是额外六个毕业项目。

@@ -171,3 +171,19 @@ svg.icon{width:17px;height:17px;stroke:currentColor;stroke-width:1.8;stroke-line
 @media(max-width:810px){.main-scroll{overflow:auto}.page{padding:16px}.topbar{padding:0 12px}.top-search{display:none}.top-alert{padding:0 11px;height:auto;min-height:34px}.top-alert .alert-detail{display:none}.page-head{flex-direction:column}.cols-4{grid-template-columns:repeat(2,minmax(0,1fr))}.cols-3{grid-template-columns:1fr}.workbench,.workbench.wide-notes{grid-template-columns:1fr}.document-scroll{max-height:460px}.editor-area{height:300px}.catalog-layout{grid-template-columns:1fr}.module-list{display:grid;grid-template-columns:repeat(2,1fr)}.project-layout{grid-template-columns:1fr}.project-right{grid-column:auto}}
 @media(max-width:520px){.stage-strip{grid-template-columns:repeat(2,1fr)}.cols-2{grid-template-columns:1fr}.top-avatar{display:none}.data-table th:nth-child(3),.data-table td:nth-child(3){display:none}.lesson-header{flex-direction:column;align-items:stretch}.page-head h1{font-size:20px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* v0.3 multi-project catalog. Design state only. */
+.mini-project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:11px}
+.mini-project-card{background:var(--surface);border:1px solid var(--border);padding:12px 13px;border-radius:9px;text-align:left;color:var(--text);min-width:0;display:grid;gap:5px}
+.mini-project-card:hover,.mini-project-card.selected{border-color:var(--primary);background:var(--surface-2)}
+.mini-project-card.selected{box-shadow:inset 0 0 0 1px var(--primary)}
+.mini-project-card strong{font-size:12px;line-height:1.35}.mini-project-card .summary{font-size:11px;color:var(--muted);line-height:1.5;min-height:32px}
+.mini-project-card footer{display:flex;align-items:center;justify-content:space-between;gap:4px;font-size:10px;color:var(--muted)}
+.mini-project-detail{padding:15px 17px;margin-bottom:14px}
+.mini-project-detail .detail-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:11px}
+.mini-project-detail h3{font-size:15px;margin:3px 0 4px}.mini-project-detail p{font-size:11px;color:var(--text-2);margin:0}
+.mini-project-detail .detail-milestones{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}
+.mini-project-detail .mini-milestone{background:var(--surface-2);border:1px solid var(--border);border-radius:7px;padding:9px;font-size:11px;min-width:0}
+.mini-project-detail .mini-milestone small{display:block;color:var(--muted);margin-top:4px}
+@media(max-width:1350px){.mini-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mini-project-detail .detail-milestones{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:720px){.mini-project-grid{grid-template-columns:1fr}.mini-project-detail .detail-milestones{grid-template-columns:repeat(2,minmax(0,1fr))}}
